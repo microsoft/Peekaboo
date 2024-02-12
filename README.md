@@ -20,7 +20,7 @@ PyTorch implementation of Peekaboo, a training-free and zero-latency interactive
 
 ## Quickstart :rocket:
 
-Follow the instructions below to download and run Peekaboo on your own prompts and bbox inputs. These instructions need a GPU with ~40GB VRAM for zeroscope and ~13GB VRAM for modelscope . If you don't have a GPU, you may need to change the default configuration from cuda to cpu or follow intstructions. 
+Follow the instructions below to download and run Peekaboo on your own prompts and bbox inputs. These instructions need a GPU with ~40GB VRAM for zeroscope and ~13GB VRAM for modelscope . If you don't have a GPU, you may need to change the default configuration from cuda to cpu or follow intstructions given [here](https://huggingface.co/docs/diffusers/main/en/optimization/memory). 
 
 ### Set up a conda environment:
 ```

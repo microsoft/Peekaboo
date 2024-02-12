@@ -97,6 +97,9 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+# Ignore files with specific extensions
+*.mp4
+*.mp3
 
 # Chutzpah Test files
 _Chutzpah*

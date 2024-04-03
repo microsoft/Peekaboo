@@ -1,6 +1,7 @@
 # Get all metrics for your predicted and ground truth bounding boxes
 
 import pickle as pkl
+import json
 import numpy as np
 import os
 import torch
@@ -137,8 +138,8 @@ def print_metrics(new_data):
     
     
 def main(pred_path, gt_path):
-    with open(pred_path, 'rb') as f:
-        data = pkl.load(f)
+    with open(pred_path, 'r') as f:
+        data = json.load(f.read())
     with open(gt_path, 'rb') as f:
         gt_ds = pkl.load(f)
     new_data = process(data, gt_ds)
@@ -148,8 +149,8 @@ def main(pred_path, gt_path):
 if __name__ == "__main__":
     import pandas as pd
     parser = argparse.ArgumentParser()
-    parser.add_argument('--prediction_path', type=str, help="Path to your predicted bounding boxes", required=True)
-    parser.add_argument('--gt_path', type=str, help="Path to your ground truth bounding boxes", required=True)
+    parser.add_argument('--prediction_path', type=str, help="Path to your predicted bounding boxes pickle", required=True)
+    parser.add_argument('--gt_path', type=str, help="Path to your ground truth bounding boxes json", required=True)
     args = parser.parse_args()
     print("Starting evaluation")
     main(args.prediction_path, args.gt_path)

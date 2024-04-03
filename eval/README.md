@@ -20,4 +20,18 @@ For each of these datasets, we provide a json file, which has multiple records, 
 Additionaly, there is also other metadata present, including the id of the video in the original dataset.
 
 
+### Metrics
+We use the following metrics for evaluation - 
+- **Coverage:** This metric represents the fraction of generated videos where OWL-ViT detects bounding boxes (bboxes) in more than 50% of the frames. It indicates the model's ability to generate videos that include detectable objects across a majority of frames.
+
+- **Intersection-over-Union (mIoU):** After filtering out videos where less than 50% of frames have a detected bbox, we calculate the Intersection-over-Union of the detected bboxes with the input mask for these filtered videos. The mean IoU (mIoU) scores for each method are reported, offering a measure of the generation method's spatio-temporal control by assessing how well the detected objects align with the specified input masks.
+
+- **Centroid Distance (CD):** This metric calculates the distance between the centroid of the generated object and the input mask, normalized to 1. It serves as an indicator of the generation method's control over the location of the generated object within the video.
+
+- **Average Precision@50% (AP50):** The average precision at 50% threshold (AP50) of the detected and input bboxes averaged over all videos is reported. For frames where the object is present, AP50 quantifies the spatial control the method provides. It evaluates how precisely the generated object's location matches the input specification and penalizes frames where the object is not detected accurately.
+
 ### Evaluation
+To run the evaluation script, run
+```
+python get_metrics.py --prediction_path /path/to/predictions --gt_path /path/to/ground_truth
+```

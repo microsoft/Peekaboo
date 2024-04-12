@@ -35,3 +35,7 @@ To run the evaluation script, run
 ```
 python get_metrics.py --prediction_path /path/to/predictions --gt_path /path/to/ground_truth
 ```
+We expect predictions to be a pickle file containing bbox annotations for your generated videos. The structure of the data is similar to the ground truth json files provided, but `bboxes` need to be numpy arrays of size `(num_frames x h x w)` with masks being denoted by 1 and other values being 0.
+
+
+To generate bounding box annotations for your videos, you can use the `create_bbox.py` script provided. 

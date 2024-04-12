@@ -138,10 +138,10 @@ def print_metrics(new_data):
     
     
 def main(pred_path, gt_path):
-    with open(pred_path, 'r') as f:
-        data = json.load(f.read())
-    with open(gt_path, 'rb') as f:
-        gt_ds = pkl.load(f)
+    with open(pred_path, 'rb') as f:
+        data = pkl.load(f)
+    with open(gt_path, 'r') as f:
+        gt_ds = json.load(f.read())
     new_data = process(data, gt_ds)
     print_metrics(new_data)
     return new_data

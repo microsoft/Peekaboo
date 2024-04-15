@@ -1,5 +1,5 @@
 # Peekaboo: Interactive Video Generation via Masked-Diffusion
-### [Project Page](https://jinga-lala.github.io/projects/Peekaboo/) | [Paper](https://arxiv.org/abs/2312.07509) | [Data](data/README.md) | [HuggingFace Demo](https://huggingface.co/spaces/anshuln/peekaboo-demo)
+### [Project Page](https://jinga-lala.github.io/projects/Peekaboo/) | [Paper](https://arxiv.org/abs/2312.07509) | [Data](eval/README.md) | [HuggingFace Demo](https://huggingface.co/spaces/anshuln/peekaboo-demo)
 PyTorch implementation of Peekaboo, a training-free and zero-latency interactive video generation pipeline<br>
 
 [Peekaboo: Interactive Video Generation via Masked-Diffusion](https://jinga-lala.github.io/projects/Peekaboo/)  
@@ -51,7 +51,7 @@ We recommend using our interactive Gradio demo to play with different input bbox
 
 ## Datasets and Evaluation 
 
-Please follow the [README](data/README.md) to download the datasets and learn more about Peekaboo's evaluation.
+Please follow the [README](eval/README.md) to download the datasets and learn more about Peekaboo's evaluation.
 
 
 ## Tips
